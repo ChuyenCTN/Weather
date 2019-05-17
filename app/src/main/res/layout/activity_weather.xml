@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:padding="4dp"
+    tools:context=".WeatherActivity">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:context=".MapsActivity" />
+
+    <LinearLayout
+        android:id="@+id/layout_search"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/border_search"
+        android:elevation="3dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ed_search_location"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="10"
+            android:background="@drawable/border_edittext"
+            android:hint="Tìm kiếm..."
+            android:paddingLeft="16dp"
+            android:textColor="#fff"
+            android:textColorHint="#73FFFFFF"
+            android:inputType="textAutoComplete"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:onClick="searchCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:src="@drawable/ic_search" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_search"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img_mylocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_search"
+            android:layout_marginRight="3dp"
+            android:baselineAlignBottom="true"
+            android:src="@drawable/ic_location_on" />
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="Hà Nội"
+            android:textColor="#fff"
+            android:textSize="30sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_search"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img_weather"
+            android:layout_width="80dip"
+            android:layout_height="48dip"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:baselineAlignBottom="true"
+            />
+
+        <TextView
+            android:id="@+id/tv_do"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="32"
+            android:textColor="#fff"
+            android:textSize="80sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:baselineAlignedChildIndex="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_doC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:textColor="#fff"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/tv_doF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:textColor="#fff"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_city"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/roboto"
+        android:text="status"
+        android:textColor="#fff"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/tv_doam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_status"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/roboto"
+        android:text="status"
+        android:textColor="#fff"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/tv_gio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_doam"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/roboto"
+        android:text="status"
+        android:textColor="#fff"
+        android:textSize="26sp" />
+    <TextView
+        android:id="@+id/tv_may"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_gio"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/roboto"
+        android:text="status"
+        android:textColor="#fff"
+        android:textSize="26sp" />
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_may"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/roboto"
+        android:text="status"
+        android:textColor="#fff"
+        android:textSize="26sp" />
+
+</RelativeLayout>
